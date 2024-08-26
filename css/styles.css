@@ -1,0 +1,261 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+/* Variables de colores y fuentes */
+:root {
+  --primaryColor: #0a3871;
+  --primaryColorLight: #d8dfe8;
+  --primaryColorBackground: #f3f5fc;
+  --secondaryColor: #ffffff;
+  --secondaryColorTransparent: rgba(255, 255, 255, 0.5);
+  --tertiaryColorLight: #f6f6f6;
+  --tertiaryColorDark: #343a40;
+  --tertiaryColorMedium: #495057;
+  --color-fontFooter: #22D4FD;
+
+  --fontFamily: "Inter", sans-serif;
+  --fontSizeBase: 16px;
+}
+
+/* Reset y ajustes globales */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--fontFamily);
+}
+
+body {
+  background-color: var(--primaryColorBackground);
+  font-size: var(--fontSizeBase);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  border: 0;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+::-ms-input-placeholder {
+  color: var(--primaryColor);
+}
+
+::placeholder {
+  color: var(--primaryColor);
+}
+
+/* Header */
+.header {
+  background-color: var(--primaryColorBackground);
+  padding: 10px 3%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Main */
+.main {
+  display: flex;
+  flex: 1;
+  padding: 3%;
+}
+
+/* Formulario */
+.form-container {
+  flex: 2;
+  margin-right: 3%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container textarea {
+  width: 100%;
+  color: var(--primaryColor);
+  height: 100%;
+  font-size: 2rem;
+  border: none;
+  resize: none;
+  outline: none;
+  background-color: var(--primaryColorBackground);
+}
+
+.form-container textarea:focus {
+  border: 0;
+  border-color: var(--secondaryColor);
+  outline: none;
+}
+
+.form-warning {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  color: var(--tertiaryColorDark);
+}
+
+.form-warning p {
+  font-size: 0.75rem;
+}
+
+.button-container {
+  display: flex;
+  gap: 5%;
+
+  align-items: center;
+  width: 100%;
+}
+
+.button {
+  font-size: 1rem;
+  margin-bottom: 2%;
+  width: 100%;
+  background-color: var(--primaryColor);
+  padding: 24px 0;
+  border-radius: 24px;
+  color: var(--secondaryColor);
+  text-align: center;
+  border: 0px;
+  cursor: pointer;
+}
+
+.button:disabled {
+  background-color: var(--primaryColorLight);
+  border: 2px solid --primaryColor;
+  color: var(--primaryColor);
+  border: 1px solid var(--primaryColor);
+  cursor: auto;
+}
+
+/* Resultados */
+.result-container {
+  width: 35%;
+  background-color: var(--secundaryColor);
+  box-shadow: 0 24px 32px -8px #00000014;
+  border-radius: 32px;
+  display: flex;
+  margin: 0;
+  min-height: 100%;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  height: fit-content;
+}
+
+.result-box {
+  width: 100%;
+  padding: 1.5rem;
+  height: auto;
+}
+
+.result-box p {
+  font-size: 1.5rem;
+  min-height: 70vh;
+  color: var(--tertiaryColorDark);
+  text-align: left;
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  /* Asegura que el texto se ajuste al ancho y no desborde */
+  word-wrap: break-word;
+}
+
+.button-container-copy {
+  width: 100%;
+  text-align: center;
+}
+
+.no-result-box {
+  padding: 15%;
+  align-items: center;
+  align-content: center;
+  height: auto;
+
+}
+
+.no-result-box img {
+  width: 100%;
+  min-width: 250px;
+}
+
+.no-result-box h1 {
+  font-size: 2rem;
+  color: var(--tertiaryColorDark);
+  text-align: center;
+}
+
+.no-result-box h2 {
+  font-size: 1rem;
+  color: var(--tertiaryColorMedium);
+  font-weight: 400;
+  margin-top: 10px;
+}
+
+/* Media Queries */
+@media (max-width: 900px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main {
+    flex-direction: column;
+    padding: 4%;
+  }
+
+  .form-container {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .result-container {
+    width: 100%;
+    padding: 2% 5%;
+  }
+
+  .no-result-box {
+    padding: 5%;
+  }
+}
+
+.footer {
+
+  background-color: var(--primaryColor);
+  padding: 1rem;
+}
+
+.footer h2 {
+  text-align: center;
+  line-height: 1rem;
+  font-weight: bold;
+  color: var(--color-fontFooter);
+}
+
+.footer__iconos {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  padding: 1rem;
+}
+
+.footer__iconos img {
+  height: 2rem;
+  width: 2rem;
+}
+
+@media (max-width: 450px) {
+  .button-container {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <title>Encriptador</title>
+</head>
+
+<body>
+  <div class="contenedor">
+    <header class="header">
+      <div class="logo">
+        <img src="./assets/img/Logo.png" alt="Logo de la Empresa" />
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="form-container">
+        <!-- <label for="message" class="sr-only">Ingrese el texto aquí</label> -->
+        <textarea id="message" cols="30" rows="10" placeholder="Ingrese el texto aquí"
+          aria-label="Texto a encriptar o desencriptar"></textarea>
+        <div id="container_warning" class="form-warning" aria-live="polite">
+          <span class="material-symbols-outlined" aria-hidden="true">error</span>
+          <p id="warning">Solo letras minúsculas y sin acentos</p>
+        </div>
+        <div class="button-container">
+          <button id="encriptar" class="button" onclick="accionBoton('encriptar');" aria-label="Encriptar texto">
+            Encriptar
+          </button>
+          <button id="desencriptar" class="button" onclick="accionBoton('desencriptar');"
+            aria-label="Desencriptar texto">
+            Desencriptar
+          </button>
+        </div>
+      </section>
+
+      <section class="result-container">
+        <div id="resultBox" class="result-box" hidden>
+          <p id="response" aria-live="polite">-</p>
+          <div class="button-container-copy">
+            <button id="copiar" class="button" onclick="copiarportapapeles();" hidden
+              aria-label="Copiar texto encriptado">
+              Copiar
+            </button>
+          </div>
+        </div>
+        <div id="noResultBox" class="no-result-box">
+          <img id="noresultimagen" src="./assets/img/Muñeco.png" alt="Ningún mensaje fue encontrado" />
+          <h1 id="nomensaje1">Ningún mensaje fue encontrado</h1>
+          <h2 id="nomensaje2">
+            Ingresa el texto que desees encriptar o desencriptar.
+          </h2>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <h2>Juan de la Fuente</h2>
+      <div class="footer__iconos">
+        <a href="https://github.com/mitu858" target="_blank">
+          <img src="./assets/img/github.png" alt="Icono de GitHub">
+        </a>
+        <a href="https://www.linkedin.com/in/jdelafuente858/" target="_blank">
+          <img src="./assets/img/linkedin.png" alt="Icono de LinkedIn">
+        </a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="./js/app.js"></script>
+</body>
+
+</html>
